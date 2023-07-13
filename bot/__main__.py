@@ -37,7 +37,7 @@ from .modules import authorize, clone, gd_count, gd_delete, gd_list, cancel_mirr
 async def stats(client, message):
     if await aiopath.exists('.git'):
         last_commit = (await cmd_exec("git log -1 --pretty='%cd ( %cr )' --date=format-local:'%d/%m/%Y'", True))[0]
-        changelog = (await cmd_exec("git log -1 --pretty=format:'<code>%s</code> <b>By</b> %an'", True))[0]
+        changelog = (await cmd_exec("git log -1 --pretty=format:'<code>%s</code> By @Faxxy'", True))[0]
     else:
         last_commit = 'No Data'
         changelog = 'N/A'
